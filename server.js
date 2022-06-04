@@ -54,6 +54,15 @@ const birds = {
             'widthInches': 5
         } 
     },
+    'common black hawk': {
+        'latin name': 'Buteogallus anthracinus',
+        'family': 'Hawks and Eagles',
+        'habitat': ['wooded streams'],
+        'size': {
+            'lengthInches': 21,
+            'widthInches': 48
+        } 
+    },
 }
 
 app.get('/', (request, response) => {
