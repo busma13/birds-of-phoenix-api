@@ -7,7 +7,7 @@ app.use(cors());
 
 const birds = {
     'list': {
-        'possible bird names': ['burrowing owl', 'american coot', 'white-winged dove', 'northern mocking bird', 'anna\'s hummingbird'],
+        'possible bird names': ['burrowing owl', 'american coot', 'white-winged dove', 'northern mocking bird', 'anna\'s hummingbird', 'common black hawk'],
     },
     'burrowing owl': {
         'latin name': 'Athene cunicularia',
