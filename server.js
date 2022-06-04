@@ -6,8 +6,9 @@ const cors = require('cors');
 app.use(cors());
 
 const birds = {
-    'list': 
-        ['burrowing owl', 'american coot', 'white-winged dove', 'northern mocking bird', 'anna\'s hummingbird'],
+    'list': {
+        'possible bird names': ['burrowing owl', 'american coot', 'white-winged dove', 'northern mocking bird', 'anna\'s hummingbird'],
+    },
     'burrowing owl': {
         'latin name': 'Athene cunicularia',
         'family': 'Owls',
@@ -66,6 +67,10 @@ app.get('/api/:bird', (request, response) => {
     } else {
         response.json(birds.list);
     }
+});
+
+app.get('/api', (request, response) => {
+    response.json(birds.list);
 });
 
 app.listen(process.env.PORT || PORT, () => {
