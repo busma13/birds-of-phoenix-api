@@ -7,7 +7,7 @@ An API containing information about birds that can be spotted locally in the Pho
 
 ## How It's Made:
 
-**Tech used:** HTML, CSS, JavaScript, Node.js
+**Tech used:** HTML, JavaScript, Node.js, Express
 
 ## Optimizations
 
