@@ -4,11 +4,17 @@ const PORT = 8000;
 const cors = require('cors');
 
 app.use(cors());
-
+app.use(express.static('public'));
+/* White-crowned Sparrow
+Black Phoebe
+Gila Woodpecker
+Verdin
+Curved-billed Thrasher
+Lesser Nighthawk
+Brown-headed Cowbird
+Say's Phoebe
+*/
 const birds = {
-    'list': {
-        'possible bird names': ['burrowing owl', 'american coot', 'white-winged dove', 'northern mocking bird', 'anna\'s hummingbird', 'common black hawk', 'great-tailed grackle', 'mourning dove', 'inca dove', 'house sparrow'],
-    },
     'burrowing owl': {
         'latin name': 'Athene cunicularia',
         'family': 'Owls',
@@ -179,63 +185,21 @@ const birds = {
         },
         'image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Rosy-faced_lovebird_%28Agapornis_roseicollis_roseicollis%29.jpg/220px-Rosy-faced_lovebird_%28Agapornis_roseicollis_roseicollis%29.jpg'
     },
-    'house finch': {
-        'latin name': 'Carpodacus mexicanus',
-        'family': 'True finch',
-        'habitat': ['thorn forrests', 'arid scrub', 'pine-oak', 'juniper', 'sagebrush', 'agricultural areas', 'urban areas'],
-        'size': {
-            'lengthInches': 6,
-            'widthInches': 10
-        },
-        'image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Carpodacus_mexicanus_-Madison%2C_Wisconsin%2C_USA-8.jpg/220px-Carpodacus_mexicanus_-Madison%2C_Wisconsin%2C_USA-8.jpg'
-    },
-    'house finch': {
-        'latin name': 'Carpodacus mexicanus',
-        'family': 'True finch',
-        'habitat': ['thorn forrests', 'arid scrub', 'pine-oak', 'juniper', 'sagebrush', 'agricultural areas', 'urban areas'],
-        'size': {
-            'lengthInches': 6,
-            'widthInches': 10
-        },
-        'image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Carpodacus_mexicanus_-Madison%2C_Wisconsin%2C_USA-8.jpg/220px-Carpodacus_mexicanus_-Madison%2C_Wisconsin%2C_USA-8.jpg'
-    },
-    'house finch': {
-        'latin name': 'Carpodacus mexicanus',
-        'family': 'True finch',
-        'habitat': ['thorn forrests', 'arid scrub', 'pine-oak', 'juniper', 'sagebrush', 'agricultural areas', 'urban areas'],
-        'size': {
-            'lengthInches': 6,
-            'widthInches': 10
-        },
-        'image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Carpodacus_mexicanus_-Madison%2C_Wisconsin%2C_USA-8.jpg/220px-Carpodacus_mexicanus_-Madison%2C_Wisconsin%2C_USA-8.jpg'
-    },
-    'house finch': {
-        'latin name': 'Carpodacus mexicanus',
-        'family': 'True finch',
-        'habitat': ['thorn forrests', 'arid scrub', 'pine-oak', 'juniper', 'sagebrush', 'agricultural areas', 'urban areas'],
-        'size': {
-            'lengthInches': 6,
-            'widthInches': 10
-        },
-        'image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Carpodacus_mexicanus_-Madison%2C_Wisconsin%2C_USA-8.jpg/220px-Carpodacus_mexicanus_-Madison%2C_Wisconsin%2C_USA-8.jpg'
-    },
+
 }
 
-app.get('/', (request, response) => {
-    response.sendFile(__dirname + '/index.html')
-});
 
 app.get('/api/:bird', (request, response) => {
     const birdName = request.params.bird.toLowerCase()
     if (birds[birdName]) {
         response.json(birds[birdName]);
     } else {
-        response.json(birds.list);
+        response.json({'possible_bird_names': Object.keys(birds)});
     }
 });
 
 app.get('/api', (request, response) => {
-    response.json(birds.list);
+        response.json({'possible_bird_names': Object.keys(birds)});
 });
 
 app.listen(process.env.PORT || PORT, () => {

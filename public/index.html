@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <title>Birds of Phoenix API</title>
+</head>
+<body class="bg-slate-300">
+    <div class="flex flex-col mx-10">
+        <h1 class="text-6xl font-bold underline text-red-500 mb-8 pt-8 text-center">Birds of Phoenix API</h1>
+        <p class="mb-4">Please use https://birds-of-phoenix-api.herokuapp.com/api/&lt;bird-name&gt; where &lt;bird-name&gt; is the name of the bird you are looking for.  If you do not include a bird name, a list of the names of all the birds in the collection will be given.</p>
+        <h2 class="text-2xl font-bold mb-4">Examples:</h2>
+        <p class="mb-4">Request: GET https://birds-of-phoenix-api.herokuapp.com/api/red-tailed hawk</p>
+        <span>Response:</span>
+        <code class="mb-8"><pre>
+            {
+            "latin name": "Buteo jamaicensis",
+            "family": "Raptors",
+            "habitat": [
+                "open woodlands",
+                "thorn forest",
+                "savanna"
+            ],
+            "size": {
+                "lengthInches": 22,
+                "widthInches": 53
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/
+                      commons/thumb/3/32/Red-tailed_Hawk.jpg/220px-Red-tailed_Hawk.jpg"
+        }</pre></code>
+    
+        <p class="mb-4">Request: GET https://birds-of-phoenix-api.herokuapp.com/api/</p>
+        <span>Response:</span>
+        <code class="mb-8"><pre>
+            {
+                "possible_bird_names": [
+                    "burrowing owl",
+                    "american coot",
+                    "white-winged dove",
+                    "northern mocking bird",
+                    "anna's hummingbird",
+                    "common black hawk",
+                    "great-tailed grackle",
+                    "mourning dove",
+                    "inca dove",
+                    "house sparrow",
+                    "eurasian collared dove",
+                    "European Starling",
+                    "rock pigeon",
+                    "house finch",
+                    "abert's towhee",
+                    "red-tailed hawk",
+                    "peach-faced lovebird"
+                ]
+            }
+        </pre></code>
+    </div>
+</body>
+</html>
