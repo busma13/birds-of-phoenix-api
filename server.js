@@ -188,6 +188,13 @@ const birds = {
 
 }
 
+app.get('/api', (request, response) => {
+        response.json({'possible_bird_names': Object.keys(birds)});
+});
+
+app.get('/api/all', (request, response) => {
+    response.json(birds);
+});
 
 app.get('/api/:bird', (request, response) => {
     const birdName = request.params.bird.toLowerCase()
@@ -196,10 +203,6 @@ app.get('/api/:bird', (request, response) => {
     } else {
         response.json({'possible_bird_names': Object.keys(birds)});
     }
-});
-
-app.get('/api', (request, response) => {
-        response.json({'possible_bird_names': Object.keys(birds)});
 });
 
 app.listen(process.env.PORT || PORT, () => {

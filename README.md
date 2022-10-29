@@ -9,11 +9,11 @@ An API containing information about birds that can be spotted locally in the Pho
 
 **Tech used:** HTML, JavaScript, Node.js, Express
 
-## Optimizations
+## Future Optimizations
 
-Create a better landing page with more detailed instructions.
 Add more birds.
 Add a database to handle all of the data.
+Add search functionality.
 
 ## Lessons Learned:
 
