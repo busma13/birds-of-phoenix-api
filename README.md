@@ -1,7 +1,7 @@
 # Birds of Phoenix API
 An API containing information about birds that can be spotted locally in the Phoenix, Arizona area.  Use this API to build out your next bird watching app. 
 
-**Link to project:** https://birds-of-phoenix-api.herokuapp.com/
+**Link to project:** https://birdsofphoenix.cyclic.app//
 
 ![alt tag](https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Red-tailed_Hawk.jpg/220px-Red-tailed_Hawk.jpg)
 
